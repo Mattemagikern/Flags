@@ -1,0 +1,8 @@
+#North
+Command-Manifest: .commands/manifest.yml
+
+Self:
+    revision: origin/master
+    remotes:
+      origin: github.com:Mattemagikern/flags.git
+
