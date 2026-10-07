@@ -104,6 +104,13 @@ func (f *FlagSet) Parse(args []string) ([]string, error) {
 			*v = args[i+1]
 			i++
 
+		case *[]string:
+			if !(i+1 < len(args)) {
+				return remaining, errors.New("Malformed flag, require input")
+			}
+			*v = append(*v, args[i+1])
+			i++
+
 		default:
 			return remaining, errors.New(fmt.Sprintf("Cannot parse type of variable: %v", v))
 		}
